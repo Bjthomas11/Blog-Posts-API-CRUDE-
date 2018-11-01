@@ -1,14 +1,5 @@
 const uuid = require('uuid');
 
-// This module provides volatile storage, using a `BlogPost`
-// model. We haven't learned about databases yet, so for now
-// we're using in-memory storage. This means each time the app stops, our storage
-// gets erased.
-
-// Don't worry too much about how BlogPost is implemented.
-// Our concern in this example is with how the API layer
-// is implemented, and getting it to use an existing model.
-
 
 function StorageException(message) {
    this.message = message;
@@ -28,13 +19,11 @@ const BlogPosts = {
     return post;
   },
   get: function(id=null) {
-    // if id passed in, retrieve single post,
-    // otherwise send all posts.
+
     if (id !== null) {
       return this.posts.find(post => post.id === id);
     }
-    // return posts sorted (descending) by
-    // publish date
+
     return this.posts.sort(function(a, b) {
       return b.publishDate - a.publishDate
     });

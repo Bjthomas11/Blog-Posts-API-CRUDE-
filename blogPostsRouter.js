@@ -5,18 +5,18 @@ const router = express.Router();
 const {BlogPosts} = require("./models");
 
 
-function initalText(){
+function lorem(){
     return (
             "lorem laborum deserunt ut sit enim voluptate anim nulla non consequat aliqua. Anim nisi est tempor"
     );
 }
 
-BlogPosts.create("Who is the greatest NBA Player ever?", initalText(), "Brian Thomas");
-BlogPosts.create("Why is baseball fading away?", initalText(), "Mike Trout");
+BlogPosts.create("10 things -- you won't believe #4", lorem(), "Billy Bob");
+BlogPosts.create("Lions and tigers and bears oh my", lorem(), "Lefty Lil");
 
 
 router.get("/", (req,res)=>{
-    res.json(BlogPosts.get());
+    res.status(200).json(BlogPosts.get());
 });
 
 router.post("/blog-posts", (req,res)=>{
@@ -38,7 +38,7 @@ router.post("/blog-posts", (req,res)=>{
 });
 
 router.delete("/:id", (req,res)=>{
-    blogPosts.delete(req.params.id);
+    BlogPosts.delete(req.params.id);
     console.log(`Deleted blog post ${req.params.id}`);
     res.status(204).end();
 });
@@ -66,7 +66,7 @@ router.put("/:id", (req,res) =>{
         author: req.body.author,
         publishDate: req.body.publishDate
     });
-    res.status(201).end();
+    res.status(200).json(updateItem);
 });
 
 module.exports = router;
