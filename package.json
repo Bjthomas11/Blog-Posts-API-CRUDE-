@@ -4,6 +4,7 @@
   "description": "Blog Posts API",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian Thomas",
@@ -14,5 +15,10 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.5",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
