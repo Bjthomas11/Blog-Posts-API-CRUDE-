@@ -1,10 +1,9 @@
 language: node_js
 node_js: node
-deploy: creepy-nightmare-49955
+deploy: 
   provider: heroku
   api_key:
     secure: Be+QO67ERIShcM8DvGI+WZ+sVSGrR8ofCE9GPK/F2hI+ubLVWmuSM8cN3/P3MqCbrrf23uMPuZrBbO5fgFORCer8sm8IrFMLeDK6HbQJyVLX0y8qt0BAUQYBpSi3avx/DfKQe/in7ndLb4iaHPcs2oDYSzr1PLvfaLXziKsN98hfrupuEED/tlpM+PgbeKp/XKxQtooOHnP75NlIpjpDFgXM9+HnDM69UXKVBdIWyVnnBrI7q02TQwVAjTiEgPbDIUt2nGbNPtP/Jv0UsD+RTQpYffXpOddbIE/w00DLOp2WhJiygdAn3M6aokoKB23rdABj4NqISGJbrct8eqcoy1AzFVTrxqfAhsCKDXxoFodYK9ypGLoVmAYVsM2b7j6xrT5nl0l0FjEFgZrGeknssyDYdlzR0u7EehTgfDRIq9O2DmRnTCAuJJDuhydYXKCpMtahuhYU1Bh6X/dFDL9XdVBs3+YTq+Ejm6MHqsLN/w8Io8bcfk3wrMEWjpj2EvMnyb40gtu9oWgvbrjYckg7apgxCDyISFH07JgSLuhDnv7lWMPCfDufPhPx/C8iZUKX2VsOta+eWHKogpk0x8XkHFexpD3hkwyLCno8oluqzEYDGkWv4E2JrXtDVzm+H3J3xYtcSXt0yCisg5MnSwJIPtPQs8o7d4I83RJOj6Tb3ms=
-  app: Blog-Posts-API-CRUDE-
+  app: creepy-nightmare-49955
   on:
     repo: Bjthomas11/Blog-Posts-API-CRUDE-
-    branch: feature/test-solution
