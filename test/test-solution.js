@@ -34,7 +34,7 @@ describe("Blog Posts", function(){
     it("should add a blog post on POST request", function() {
         const newPost = {
           title: "Lorem",
-          content: "foo foo foo foo",
+          content: "random words",
           author: "Brian Thomas"
         };
         const expectedKeys = ["id", "publishDate"].concat(Object.keys(newPost));
@@ -52,6 +52,17 @@ describe("Blog Posts", function(){
             expect(res.body.content).to.equal(newPost.content);
             expect(res.body.author).to.equal(newPost.author);
           });
+      });
+
+      it("should return error if POST missing expected values", function(){
+        const badRequest = {};
+        return chai
+            .request(app)
+            .post("/blog-posts")
+            .send(badRequest)
+            .then(function(res){
+                expect(res).to.have.status(400);
+            });
       });
 
     it("should update blog posts on PUT request", function() {
